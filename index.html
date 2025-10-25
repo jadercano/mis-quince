@@ -1,0 +1,76 @@
+<!-- ...existing code... -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mis Quince — You're Invited!</title>
+  <meta name="description" content="Join us for a memorable Mis Quince celebration — food, music, dancing, and memories." />
+  <link rel="icon" href="favicon.ico" />
+  <style>
+    :root{--accent:#d455a6;--bg:#f6f7fb;--card:#ffffff;--muted:#666}
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;background:var(--bg);color:#111}
+    .container{max-width:960px;margin:0 auto;padding:2rem}
+    header{padding:1rem 0;text-align:center}
+    .hero{background:linear-gradient(180deg, rgba(212,85,166,0.06), transparent);border-radius:12px;padding:2rem;margin:1rem 0;display:flex;gap:1.25rem;align-items:center}
+    .hero .info{flex:1}
+    h1{font-size:1.75rem;margin:0;color:var(--accent)}
+    h2{margin:.25rem 0 1rem 0;font-size:1.25rem}
+    p{margin:0 0 1rem 0}
+    .card{background:var(--card);border-radius:10px;padding:1rem;border:1px solid #eee;box-shadow:0 2px 8px rgba(0,0,0,0.03)}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:1rem}
+    .badge{display:inline-block;padding:.25rem .6rem;border-radius:999px;background:var(--accent);color:#fff;font-weight:600;font-size:.85rem}
+    .meta{color:var(--muted);font-size:.95rem}
+    .cta{display:inline-block;margin-top:1rem;padding:.6rem 1rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600}
+    footer{padding:1rem 0;text-align:center;color:var(--muted);font-size:.9rem;margin-top:2rem}
+    @media (max-width:800px){.grid{grid-template-columns:1fr;}.hero{flex-direction:column;align-items:start}}
+  </style>
+</head>
+<body>
+  <header class="container">
+    <h1>Mis Quince</h1>
+    <div class="meta">A celebration of family, friends, and unforgettable moments</div>
+  </header>
+
+  <main class="container">
+    <section class="hero card" aria-labelledby="event-title">
+      <div class="info">
+        <div class="badge">You're Invited</div>
+        <h2 id="event-title">Celebrate with us — A Night to Remember</h2>
+        <p>Join family and friends for an elegant evening filled with music, dancing, great food, and special surprises as we celebrate this milestone.</p>
+        <a class="cta" href="mailto:hello@misquince.example?subject=RSVP%20-%20Mis%20Quince">RSVP — Send an Email</a>
+      </div>
+
+      <aside class="card" style="min-width:220px;">
+        <h3 style="margin-top:0">Event Details</h3>
+        <p><strong>Date:</strong> Saturday, May 17, 2025</p>
+        <p><strong>Time:</strong> 6:00 PM — 11:00 PM</p>
+        <p><strong>Location:</strong> Jardín Bella Vista, 123 Celebration Ave</p>
+        <p class="meta">Formal attire requested · Parking available on-site</p>
+      </aside>
+    </section>
+
+    <section class="card" aria-labelledby="program">
+      <h3 id="program">Evening Program (highlights)</h3>
+      <ul>
+        <li>Welcome reception & hors d'oeuvres</li>
+        <li>Grand entrance and traditional ceremonies</li>
+        <li>Live band & DJ — dance floor opens after dinner</li>
+        <li>Photo corner & memory book for guests</li>
+      </ul>
+      <p class="meta">Have questions or special requests? Reply to your RSVP email or contact the host.</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Mis Quince — All rights reserved
+  </footer>
+
+  <script>
+    // Basic accessibility enhancement: add keyboard focus styles when tabbing
+    (function(){const onFirstTab=(e)=>{if(e.key==='Tab'){document.documentElement.classList.add('user-is-tabbing');window.removeEventListener('keydown', onFirstTab)}};window.addEventListener('keydown', onFirstTab);})();
+    console.log('Mis Quince — invitation page loaded');
+  </script>
+</body>
+</html>
+<!-- ...existing code... -->
