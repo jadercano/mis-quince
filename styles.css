@@ -1,0 +1,637 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap');
+
+/* === PALETA PRINCIPAL === */
+:root {
+    --azul: #1E2A78;
+    --azul-brillante: #3A4FC9;
+    --plata: #E0E4FF;
+    --blanco: #FFFFFF;
+    --dorado: #D1B464;
+    --max-section-width: 600px;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(to bottom, #0d1033, #1E2A78);
+    color: var(--plata);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2.5rem;
+    min-height: minmax(max-content, auto);
+    max-width: var(--max-section-width);
+    align-items: center;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 3000px;
+}
+
+h1,
+h2 {
+    margin: 0.5rem 0;
+}
+
+/* Fondo estrellado */
+#starsContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    overflow: visible;
+    pointer-events: none;
+}
+
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle var(--duration) linear infinite;
+    animation-delay: var(--delay);
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* === SECCIONES UNIFICADAS === */
+section,
+header {
+    max-width: var(--max-section-width);
+    /* margen vertical uniforme */
+    text-align: center;
+    padding: 1rem;
+    /* padding igual para todas */
+    border-radius: 20px;
+    box-sizing: border-box;
+    min-height: auto;
+    /* no 100vh */
+    position: relative;
+    /* no fixed */
+    align-self: stretch;
+}
+
+section:last-of-type {
+    margin-bottom: 5rem;
+}
+
+/* === IMAGEN DE CORONA EN EL ENCABEZADO === */
+.header-crown {
+    width: 320px;
+    height: auto;
+    margin: 0 auto 1rem;
+    display: block;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
+    animation: crownGlow 4s infinite ease-in-out;
+}
+
+@keyframes crownGlow {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.7)) drop-shadow(0 0 15px rgba(0, 140, 255, 0.3));
+        transform: translateY(0);
+    }
+
+    50% {
+        filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 25px rgba(0, 140, 255, 0.5));
+        transform: translateY(-3px);
+    }
+}
+
+@media (max-width: 768px) {
+    .header-crown {
+        width: 190px;
+    }
+}
+
+/* Fondo y sombra base opcional */
+section {
+    /* background: rgba(30, 42, 120, 0.75); */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+/* === ENCABEZADO === */
+.header-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(7rem, 12vw, 12rem);
+    background: linear-gradient(90deg, #d4af37, #E0E4FF, #d4af37);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    animation: shimmer 3s infinite linear;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+.header-subtitle {
+    font-family: 'Shadows Into Light', serif;
+    color: var(--plata);
+    font-size: 3rem;
+    letter-spacing: 2px;
+}
+
+/* === MULTIMEDIA === */
+.multimedia-section {
+    /* background: linear-gradient(to bottom, #1E2A78, #3A4FC9); */
+    color: var(--blanco);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.play-instruction {
+    color: var(--plata);
+    font-size: .75rem;
+}
+
+.player-btn {
+    background: var(--plata);
+    color: var(--azul);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 0 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.player-btn:hover {
+    background: var(--dorado);
+    color: var(--blanco);
+    box-shadow: 0 0 10px var(--dorado);
+}
+
+.progress-bar {
+    width: 80%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+    margin: 0.8rem auto 1.2rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--azul-brillante), var(--plata));
+    transition: width 0.1s linear;
+}
+
+/* === FRASE Y FECHA === */
+.quote-date {
+    background: linear-gradient(to bottom, #1E2A78, #0d1033);
+    color: var(--plata);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.quote-text {
+    font-family: 'Shadows Into Light', serif;
+    font-style: italic;
+    color: var(--plata);
+    margin: 0.5rem auto;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+/* === CONTENEDOR DE FECHA PRINCIPAL === */
+.date-box {
+    margin: 0.5rem auto;
+    background: linear-gradient(145deg, rgba(30, 42, 120, 0.9), rgba(58, 79, 201, 0.8));
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 1rem;
+    box-shadow: 0 0 25px rgba(224, 228, 255, 0.1);
+    color: var(--plata);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Pequeño efecto de brillo en el borde */
+.date-box::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1), transparent 70%);
+    transform: rotate(25deg);
+    animation: dateGlow 10s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes dateGlow {
+    0% {
+        transform: rotate(0deg);
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        opacity: 0.3;
+    }
+}
+
+/* === MES === */
+.month {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--dorado);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* === FILA DE FECHA === */
+.date-row {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* === ELEMENTOS DENTRO DE LA FECHA === */
+.date-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 70px;
+}
+
+.date-item .day {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    color: var(--plata);
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+}
+
+.date-item .label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--blanco);
+    letter-spacing: 1px;
+}
+
+/* === EFECTO DECORATIVO === */
+.date-box::after {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15), transparent 60%);
+    border-radius: 50%;
+    animation: sparkle 6s infinite alternate ease-in-out;
+}
+
+@keyframes sparkle {
+    from {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0.6;
+        transform: scale(1.1);
+    }
+}
+
+/* === SECCIÓN CALENDARIO / CUENTA REGRESIVA === */
+.calendar-countdown {
+    background: linear-gradient(145deg, rgba(30, 42, 120, 0.95), rgba(58, 79, 201, 0.85));
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    color: var(--plata);
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(224, 228, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Pequeño brillo en movimiento dentro del borde */
+.calendar-countdown::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, rgba(255, 255, 255, 0.1), transparent, rgba(255, 255, 255, 0.05));
+    animation: rotateShine 12s linear infinite;
+    z-index: 0;
+}
+
+@keyframes rotateShine {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Título de la sección */
+.calendar-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--dorado);
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Texto “Faltan” */
+.countdown-label {
+    color: var(--plata);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    z-index: 1;
+}
+
+/* Caja del contador */
+.countdown-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Bloque principal con los dígitos */
+.countdown-display {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.time-segment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-segment span {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--plata);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.time-segment small {
+    font-size: 0.8rem;
+    color: var(--blanco);
+    letter-spacing: 1px;
+    margin-top: 0.2rem;
+}
+
+/* Separadores tipo reloj (:) */
+.colon {
+    font-size: 2.5rem;
+    color: var(--dorado);
+    align-self: flex-start;
+    margin-top: 0.2rem;
+    animation: pulseColon 2s ease-in-out infinite;
+}
+
+@keyframes pulseColon {
+
+    0%,
+    100% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* Efecto de resplandor lateral decorativo */
+.calendar-countdown::after {
+    content: "";
+    position: absolute;
+    bottom: -40px;
+    right: -40px;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15), transparent 60%);
+    border-radius: 50%;
+    animation: shineFloat 6s infinite alternate ease-in-out;
+    z-index: 0;
+}
+
+@keyframes shineFloat {
+    from {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 768px) {
+    .time-segment span {
+        font-size: 2.2rem;
+    }
+
+    .calendar-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* === UBICACIÓN Y DRESS CODE === */
+.location-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* === BOTÓN DE UBICACIÓN === */
+.btn-location {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.5rem;
+    border-radius: 25px;
+    background: linear-gradient(90deg, var(--azul-brillante), var(--plata));
+    color: var(--azul);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+.btn-location:hover {
+    background: linear-gradient(90deg, var(--dorado), var(--plata));
+    color: var(--azul);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+}
+
+.info-card {
+    background: rgba(30, 42, 120, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--plata);
+    border-radius: 16px;
+    padding: 2rem 1rem;
+    width: 90%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* === SECCIÓN DE CÓDIGO DE VESTIMENTA === */
+.dresscode-section {
+    background: linear-gradient(to bottom, rgba(30, 42, 120, 0.95), rgba(58, 79, 201, 0.85));
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    color: var(--plata);
+    text-align: center;
+    box-shadow: 0 0 25px rgba(224, 228, 255, 0.1);
+    position: relative;
+}
+
+.dresscode-card .info-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--dorado);
+    margin-bottom: 1rem;
+}
+
+.dresscode-card .info-text {
+    font-size: 1rem;
+    color: var(--plata);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* === LISTA DE RESTRICCIONES DE COLOR === */
+.color-restrictions {
+    background: var(--blanco);
+    color: var(--azul);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 1rem auto 1.5rem;
+    text-align: left;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.restriction-title {
+    font-weight: 700;
+    color: var(--azul);
+    margin-bottom: 0.5rem;
+}
+
+.restriction-desc {
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+/* === VIÑETAS DE COLOR === */
+.color-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.color-bullets li {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+    font-weight: 500;
+    color: var(--azul);
+}
+
+.color-sample {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 0.8rem;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Nota final */
+.info-note {
+    font-size: 0.9rem;
+    color: var(--plata);
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+/* === CONFIRMACIÓN === */
+.rsvp-section {
+    background: linear-gradient(to bottom, #1E2A78, #0d1033);
+    border-radius: 20px;
+    padding: 1rem;
+    color: var(--plata);
+    position: relative;
+    z-index: 1;
+}
+
+.btn-confirm {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--dorado), var(--plata));
+    color: var(--azul);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    transition: 0.3s ease;
+}
+
+.btn-confirm:hover {
+    background: linear-gradient(90deg, var(--plata), var(--dorado));
+    box-shadow: 0 0 20px var(--plata);
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 768px) {
+    .time-segment span {
+        font-size: 2rem;
+    }
+}

@@ -1,76 +1,136 @@
-<!-- ...existing code... -->
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mis Quince — You're Invited!</title>
-  <meta name="description" content="Join us for a memorable Mis Quince celebration — food, music, dancing, and memories." />
-  <link rel="icon" href="favicon.ico" />
-  <style>
-    :root{--accent:#d455a6;--bg:#f6f7fb;--card:#ffffff;--muted:#666}
-    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;background:var(--bg);color:#111}
-    .container{max-width:960px;margin:0 auto;padding:2rem}
-    header{padding:1rem 0;text-align:center}
-    .hero{background:linear-gradient(180deg, rgba(212,85,166,0.06), transparent);border-radius:12px;padding:2rem;margin:1rem 0;display:flex;gap:1.25rem;align-items:center}
-    .hero .info{flex:1}
-    h1{font-size:1.75rem;margin:0;color:var(--accent)}
-    h2{margin:.25rem 0 1rem 0;font-size:1.25rem}
-    p{margin:0 0 1rem 0}
-    .card{background:var(--card);border-radius:10px;padding:1rem;border:1px solid #eee;box-shadow:0 2px 8px rgba(0,0,0,0.03)}
-    .grid{display:grid;grid-template-columns:1fr 320px;gap:1rem}
-    .badge{display:inline-block;padding:.25rem .6rem;border-radius:999px;background:var(--accent);color:#fff;font-weight:600;font-size:.85rem}
-    .meta{color:var(--muted);font-size:.95rem}
-    .cta{display:inline-block;margin-top:1rem;padding:.6rem 1rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600}
-    footer{padding:1rem 0;text-align:center;color:var(--muted);font-size:.9rem;margin-top:2rem}
-    @media (max-width:800px){.grid{grid-template-columns:1fr;}.hero{flex-direction:column;align-items:start}}
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Susana - Mis Quince Años</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <header class="container">
-    <h1>Mis Quince</h1>
-    <div class="meta">A celebration of family, friends, and unforgettable moments</div>
+
+  <!-- Fondo estrellado -->
+  <div id="starsContainer"></div>
+
+  <!-- Encabezado -->
+  <header class="header floral-header">
+    <div class="header-content">
+      <img src="media/corona-dorada.png" alt="Corona dorada" class="header-crown" />
+      <h1 class="header-title shine">Susana</h1>
+      <h2 class="header-subtitle">Mis Quince Años</h2>
+    </div>
   </header>
 
-  <main class="container">
-    <section class="hero card" aria-labelledby="event-title">
-      <div class="info">
-        <div class="badge">You're Invited</div>
-        <h2 id="event-title">Celebrate with us — A Night to Remember</h2>
-        <p>Join family and friends for an elegant evening filled with music, dancing, great food, and special surprises as we celebrate this milestone.</p>
-        <a class="cta" href="mailto:hello@misquince.example?subject=RSVP%20-%20Mis%20Quince">RSVP — Send an Email</a>
+
+  <!-- Sección Multimedia -->
+  <section class="multimedia-section">
+    <p class="play-instruction">Presiona <strong>PLAY</strong> para escuchar nuestra canción</p>
+    <div class="progress-bar">
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <div class="player-controls">
+      <button class="player-btn" id="prevBtn"><i class="fas fa-backward"></i></button>
+      <button class="player-btn main-btn" id="playBtn"><i class="fas fa-play" id="playIcon"></i></button>
+      <button class="player-btn" id="nextBtn"><i class="fas fa-forward"></i></button>
+    </div>
+
+    <audio id="song" preload="metadata">
+      <source src="media/LanaDelRey-Salvatore.mp3" type="audio/mpeg">
+    </audio>
+
+  </section>
+
+  <!-- Sección Frase y Fecha -->
+  <section class="quote-date">
+    <div class="quote-box">
+      <p class="quote-text">
+        “Con la bendición de Dios y el amor que mi familia me ha dado, me siento feliz de llegar a este momento de mi
+        vida. El día que dejaré atrás mi infancia y comenzaré un nuevo viaje"
+      </p>
+      <p class="quote-text">
+        Porque son parte de mi vida es mi deseo que compartan conmigo la alegría de mis quince años.
+      </p>
+    </div>
+
+    <div class="date-box">
+      <h3 class="month">DICIEMBRE</h3>
+      <div class="date-row">
+        <div class="date-item"><span class="label">Domingo</span></div>
+        <div class="date-item"><span class="day">7</span></div>
+        <div class="date-item"><span class="label">2025</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Calendario -->
+  <section class="calendar-countdown">
+    <h2 class="calendar-title">El Gran Día</h2>
+    <div class="countdown-box">
+      <h3 class="countdown-label">Faltan</h3>
+      <div class="countdown-display">
+        <div class="time-segment"><span id="days">--</span><small>DÍAS</small></div>
+        <span class="colon">:</span>
+        <div class="time-segment"><span id="hours">--</span><small>HORAS</small></div>
+        <span class="colon">:</span>
+        <div class="time-segment"><span id="minutes">--</span><small>MINUTOS</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Ubicación -->
+  <section class="location-section">
+    <div>
+      <i class="fas fa-map-marker-alt icon"></i>
+      <h3 class="info-title">Le Blanc Celebraciones - Cabañas</h3>
+      <p class="info-text">Cra. 50a #25A-65, Bello, Antioquia</p>
+      <p class="info-time">19:00 a 02:00</p>
+      <a href="https://maps.app.goo.gl/2Bjhp8XspyJNS1Ez9" target="_blank" class="btn-location">Ver ubicación</a>
+    </div>
+  </section>
+
+  <!-- CÓDIGO DE VESTIMENTA -->
+  <section class="dresscode-section reveal">
+    <div class="dresscode-card">
+      <i class="fas fa-user-tie icon"></i>
+      <h2>Código de Vestimenta</h2>
+
+      <p class="info-text">
+        <br><strong>Caballeros:</strong> traje formal o esmoquin.
+        <br><strong>Damas:</strong> vestido largo o de cóctel.
+      </p>
+
+      <div class="color-restrictions">
+        <h4 class="restriction-title">Restricción de colores:</h4>
+        <ul class="color-bullets">
+          <li>
+            <span class="color-sample" style="background-color: #1E2A78;"></span> Azul Noche
+          </li>
+          <li>
+            <span class="color-sample" style="background-color: #3A4FC9;"></span> Azul Real
+          </li>
+        </ul>
       </div>
 
-      <aside class="card" style="min-width:220px;">
-        <h3 style="margin-top:0">Event Details</h3>
-        <p><strong>Date:</strong> Saturday, May 17, 2025</p>
-        <p><strong>Time:</strong> 6:00 PM — 11:00 PM</p>
-        <p><strong>Location:</strong> Jardín Bella Vista, 123 Celebration Ave</p>
-        <p class="meta">Formal attire requested · Parking available on-site</p>
-      </aside>
-    </section>
+      <p class="info-note">
+        💫 Evita tonos fosforescentes, estampados exagerados o prendas informales.
+      </p>
+    </div>
+  </section>
 
-    <section class="card" aria-labelledby="program">
-      <h3 id="program">Evening Program (highlights)</h3>
-      <ul>
-        <li>Welcome reception & hors d'oeuvres</li>
-        <li>Grand entrance and traditional ceremonies</li>
-        <li>Live band & DJ — dance floor opens after dinner</li>
-        <li>Photo corner & memory book for guests</li>
-      </ul>
-      <p class="meta">Have questions or special requests? Reply to your RSVP email or contact the host.</p>
-    </section>
-  </main>
+  <!-- Confirmación -->
+  <section class="rsvp-section">
+    <h2 class="rsvp-title">Confirmación de asistencia</h2>
+    <p class="rsvp-message">¡Espero que seas parte de esta noche mágica!</p>
+    <a href="https://forms.gle/tu-formulario" target="_blank" class="btn-confirm">Confirmar</a>
+  </section>
 
-  <footer>
-    &copy; 2025 Mis Quince — All rights reserved
-  </footer>
-
-  <script>
-    // Basic accessibility enhancement: add keyboard focus styles when tabbing
-    (function(){const onFirstTab=(e)=>{if(e.key==='Tab'){document.documentElement.classList.add('user-is-tabbing');window.removeEventListener('keydown', onFirstTab)}};window.addEventListener('keydown', onFirstTab);})();
-    console.log('Mis Quince — invitation page loaded');
-  </script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>
-<!-- ...existing code... -->
