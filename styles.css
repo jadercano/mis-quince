@@ -6,14 +6,13 @@
     --azul-brillante: #3A4FC9;
     --plata: #E0E4FF;
     --blanco: #FFFFFF;
-    --dorado: #D1B464;
     --max-section-width: 600px;
 }
 
 body {
     margin: 0;
     background: linear-gradient(to bottom, #0d1033, #1E2A78);
-    color: var(--plata);
+    color: var(--blanco);
     font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: column;
@@ -128,7 +127,7 @@ section {
 .header-title {
     font-family: 'Great Vibes', cursive;
     font-size: clamp(6rem, 12vw, 12rem);
-    background: linear-gradient(90deg, #d4af37, #E0E4FF, #d4af37);
+    background: linear-gradient(90deg, #BAB8B5, #FFFFFF, #BAB8B5);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     position: relative;
@@ -147,7 +146,7 @@ section {
 
 .header-subtitle {
     font-family: 'Shadows Into Light', serif;
-    color: var(--plata);
+    color: var(--blanco);
     font-size: clamp(2rem, 5vw, 13rem);
     letter-spacing: 2px;
 }
@@ -161,12 +160,12 @@ section {
 }
 
 .play-instruction {
-    color: var(--plata);
+    color: var(--blanco);
     font-size: .75rem;
 }
 
 .player-btn {
-    background: var(--plata);
+    background: var(--blanco);
     color: var(--azul);
     border: none;
     border-radius: 50%;
@@ -177,9 +176,9 @@ section {
 }
 
 .player-btn:hover {
-    background: var(--dorado);
+    background: var(--plata);
     color: var(--blanco);
-    box-shadow: 0 0 10px var(--dorado);
+    box-shadow: 0 0 10px var(--plata);
 }
 
 .progress-bar {
@@ -195,14 +194,14 @@ section {
 .progress {
     width: 0%;
     height: 100%;
-    background: linear-gradient(90deg, var(--azul-brillante), var(--plata));
+    background: linear-gradient(90deg, var(--azul-brillante), var(--blanco));
     transition: width 0.1s linear;
 }
 
 /* === FRASE Y FECHA === */
 .quote-date {
     background: linear-gradient(to bottom, #1E2A78, #0d1033);
-    color: var(--plata);
+    color: var(--blanco);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -212,7 +211,7 @@ section {
 .quote-text {
     font-family: 'Shadows Into Light', serif;
     font-style: italic;
-    color: var(--plata);
+    color: var(--blanco);
     margin: 0.5rem auto;
     font-size: 1.5rem;
     letter-spacing: 2px;
@@ -226,7 +225,7 @@ section {
     border-radius: 20px;
     padding: 1rem;
     box-shadow: 0 0 25px rgba(224, 228, 255, 0.1);
-    color: var(--plata);
+    color: var(--blanco);
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -265,7 +264,7 @@ section {
     font-size: 1.5rem;
     font-weight: 600;
     letter-spacing: 3px;
-    color: var(--dorado);
+    color: var(--plata);
     text-transform: uppercase;
     margin-bottom: 1rem;
     position: relative;
@@ -293,7 +292,7 @@ section {
 .date-item .day {
     font-family: 'Great Vibes', cursive;
     font-size: 4rem;
-    color: var(--plata);
+    color: var(--blanco);
     text-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
 }
 
@@ -334,7 +333,7 @@ section {
     background: linear-gradient(145deg, rgba(30, 42, 120, 0.95), rgba(58, 79, 201, 0.85));
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
-    color: var(--plata);
+    color: var(--blanco);
     padding: 1rem;
     text-align: center;
     box-shadow: 0 0 25px rgba(224, 228, 255, 0.1);
@@ -369,7 +368,7 @@ section {
 .calendar-title {
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
-    color: var(--dorado);
+    color: var(--plata);
     letter-spacing: 2px;
     margin-bottom: 1rem;
     position: relative;
@@ -378,7 +377,7 @@ section {
 
 /* Texto “Faltan” */
 .countdown-label {
-    color: var(--plata);
+    color: var(--blanco);
     font-size: 1.1rem;
     letter-spacing: 1px;
     margin-bottom: 1.5rem;
@@ -412,7 +411,7 @@ section {
 .time-segment span {
     font-size: 3rem;
     font-weight: bold;
-    color: var(--plata);
+    color: var(--blanco);
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
@@ -426,7 +425,7 @@ section {
 /* Separadores tipo reloj (:) */
 .colon {
     font-size: 2.5rem;
-    color: var(--dorado);
+    color: var(--plata);
     align-self: flex-start;
     margin-top: 0.2rem;
     animation: pulseColon 2s ease-in-out infinite;
@@ -497,7 +496,7 @@ section {
     margin-top: 1rem;
     padding: 0.6rem 1.5rem;
     border-radius: 25px;
-    background: linear-gradient(90deg, var(--azul-brillante), var(--plata));
+    background: linear-gradient(90deg, var(--azul-brillante), var(--blanco));
     color: var(--azul);
     font-weight: 600;
     text-decoration: none;
@@ -506,7 +505,7 @@ section {
 }
 
 .btn-location:hover {
-    background: linear-gradient(90deg, var(--dorado), var(--plata));
+    background: linear-gradient(90deg, var(--plata), var(--blanco));
     color: var(--azul);
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
     transform: translateY(-2px);
@@ -515,7 +514,7 @@ section {
 .info-card {
     background: rgba(30, 42, 120, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--plata);
+    color: var(--blanco);
     border-radius: 16px;
     padding: 2rem 1rem;
     width: 90%;
@@ -527,7 +526,7 @@ section {
     background: linear-gradient(to bottom, rgba(30, 42, 120, 0.95), rgba(58, 79, 201, 0.85));
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 20px;
-    color: var(--plata);
+    color: var(--blanco);
     text-align: center;
     box-shadow: 0 0 25px rgba(224, 228, 255, 0.1);
     position: relative;
@@ -536,13 +535,13 @@ section {
 .dresscode-card .info-title {
     font-family: 'Playfair Display', serif;
     font-size: 1.6rem;
-    color: var(--dorado);
+    color: var(--plata);
     margin-bottom: 1rem;
 }
 
 .dresscode-card .info-text {
     font-size: 1rem;
-    color: var(--plata);
+    color: var(--blanco);
     margin-bottom: 1.5rem;
     line-height: 1.6;
 }
@@ -597,7 +596,7 @@ section {
 /* Nota final */
 .info-note {
     font-size: 0.9rem;
-    color: var(--plata);
+    color: var(--blanco);
     font-style: italic;
     margin-top: 1rem;
 }
@@ -607,14 +606,14 @@ section {
     background: linear-gradient(to bottom, #1E2A78, #0d1033);
     border-radius: 20px;
     padding: 1rem;
-    color: var(--plata);
+    color: var(--blanco);
     position: relative;
     z-index: 1;
 }
 
 .btn-confirm {
     display: inline-block;
-    background: linear-gradient(90deg, var(--dorado), var(--plata));
+    background: linear-gradient(90deg, var(--plata), var(--blanco));
     color: var(--azul);
     font-weight: 600;
     text-decoration: none;
@@ -625,8 +624,8 @@ section {
 }
 
 .btn-confirm:hover {
-    background: linear-gradient(90deg, var(--plata), var(--dorado));
-    box-shadow: 0 0 20px var(--plata);
+    background: linear-gradient(90deg, var(--blanco), var(--plata));
+    box-shadow: 0 0 20px var(--blanco);
 }
 
 /* === RESPONSIVO === */
@@ -638,13 +637,13 @@ section {
 
 /* === CONTENEDOR DE FECHA PRINCIPAL === */
 .gift-box {
-    margin: 1rem auto;
+    margin: 1.5rem auto auto;
     background: linear-gradient(145deg, rgba(30, 42, 120, 0.9), rgba(58, 79, 201, 0.8));
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     padding: 1rem;
     box-shadow: 0 0 25px rgba(224, 228, 255, 0.1);
-    color: var(--plata);
+    color: var(--blanco);
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -652,7 +651,7 @@ section {
 
 .gift-box .icon {
     font-size: 3rem;
-    color: var(--dorado);
+    color: var(--plata);
     margin-bottom: 0.5rem;
 }
 
@@ -661,7 +660,7 @@ section {
     font-size: 2rem;
     font-weight: 600;
     letter-spacing: 3px;
-    color: var(--dorado);
+    color: var(--plata);
     position: relative;
     z-index: 1;
     margin-block: 0rem;
